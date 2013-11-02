@@ -1,31 +1,36 @@
-package com.(emailhoster, eg gmail).(emailname)
+package com.(email hoster, e.x: gmail).(emailname);
 
+import java.util.logging.Logger;
+
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
- 
-public final class <pluginname> extends JavaPlugin {
+
+public class Youtube extends JavaPlugin{
+	public static Logger logger = Logger.getLogger("Minecraft");
+	public static Youtube plugin;
 	
 	@Override
-	public void onEnable(){
-			getLogger.().info.("onEnable has been invoked!")
+	public void onDisable() {
+			PluginDescriptionFile pdffile = this.getDescription();
+			this.logger.info(pdffile.getName() + " Has Been Disabled!");
 	}
 	
 	@Override
-	public void onDisable(){
-			getLogger().info("onDisable has been invoked!")
-			
-	for (Player player : this.getServer().getOnlinePlayers()) {
-playerList.put(player, playerData(player));
-public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-	if (cmd.getName().equalsIgnoreCase("<commandhere")){
-		return true;
-	} else if (cmd.getName().equalsIgnoreCase("<commandhere>")) {
-		if (!(sender instanceof Player)) {
-			sender.sendMessage("This command can only be run by a player.");
-		} else {
-			Player player = (Player) sender;
+	public void onEnable() {
+		PluginDescriptionFile pdffile = this.getDescription();
+		this.logger.info(pdffile.getName() + " Version" + pdffile.getVersion() + " Has Been Enabled"
+	}
+	
+	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
+		Player player = (Player) sender;
+		if(commandLabel.equalsIgnoreCase("<commandhere>")){
+			player.sendMessage(ChatColor.GOLD + "<messagebacktoplayer>");
 		}
-		return true;
 	}
-	return false;
-}
+		
 	
+	
+
